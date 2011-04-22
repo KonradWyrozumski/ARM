@@ -1,0 +1,8 @@
+// Hitex/gn/10.07.2007
+// Initialize STM32
+
+// start at main c code
+RESET TARGET
+// this is _app_entry location
+
+
