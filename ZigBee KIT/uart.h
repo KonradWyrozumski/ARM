@@ -6,7 +6,9 @@
 #include <yfuns.h>
 #include <stdint.h>
 #include "iar.h"
-
+#include "GPIO.h"
+#include "micro-common.h"
+#include "cortexm3/micro-common.h"
 /** 
  * @brief struct for parity used for communication
 **/

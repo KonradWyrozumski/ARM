@@ -1,11 +1,4 @@
 #include "uart.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "micro-common.h"
-#include "cortexm3/micro-common.h"
-#include "yfuns.h"
-#include "regs.h"
-#include "assert.h"
 
 #define RECEIVE_QUEUE_SIZE (128)
 
@@ -42,12 +35,16 @@ void uartInit(int32u baudrate, int8u databits, SerialParity parity, int8u stopbi
 
   SC1_MODE = SC1_MODE_UART;
 
+/*
   rxHead=0;
   rxTail=0;
   rxUsed=0;
-
-  halGpioConfig(PORTB_PIN(1),GPIOCFG_OUT_ALT);
-  halGpioConfig(PORTB_PIN(2),GPIOCFG_IN);
+*/
+  
+//  halGpioConfig(PORTB_PIN(1),GPIOCFG_OUT_ALT);
+//  halGpioConfig(PORTB_PIN(2),GPIOCFG_IN);
+  configureGPIO(PORTB_PIN(1), GPIOCFG_OUT_ALT);
+  configureGPIO(PORTB_PIN(2), GPIOCFG_IN);
 
   // Make the RX Valid interrupt level sensitive (instead of edge)
   SC1_INTMODE = SC_RXVALLEVEL;

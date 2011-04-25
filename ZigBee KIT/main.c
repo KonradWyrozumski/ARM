@@ -22,9 +22,18 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 /* includes */
+#define CORTEXM3_STM32W108
 #include "stdio.h"
+#include "stdlib.h"
+#include <yfuns.h>
+#include <stdint.h>
+#include "iar.h"
+#include "micro-common.h"
+#include "cortexm3/micro-common.h"
+#include "GPIO.h"
 
 int main()
 {
+  configureGPIO(PORTB_PIN(2), GPIOCFG_IN);
   return 0;
 }
